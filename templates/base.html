@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <title>Madlibs</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <h1 class="title">Madlibs</h1>
+  <form action="/story" class="form">
+    {% for prompt in prompts %}
+      <p>{{ prompt }}:
+        <input name="{{ prompt }}" class="input-field">
+      </p>
+    {% endfor %}
+    
+    {% block content%}
+    <button class="button-sub">Submit</button>
+
+     {% endblock %}
+
+  </form>
+</body>
+</html>
